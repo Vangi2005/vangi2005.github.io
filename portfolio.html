@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivangi Goswami - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-accent: #1CAF83; 
+            --background-dark: #171717; 
+            --background-light: #d9d9d9; 
+            --text-color-light: #f0f0f0;
+            --text-color-dark: #333333;
+            --card-dark: #2c2c2c;
+            --font-family: 'Josefin Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-dark);
+            color: var(--text-color-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-color-light);
+            transition: color 0.3s;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 30px;
+        }
+
+        .dark-section {
+            background-color: var(--background-dark);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .accent-text {
+            color: var(--primary-accent);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: var(--background-light);
+            color: var(--text-color-dark);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-button {
+            display: block;
+            padding: 8px 20px;
+            background-color: var(--background-light);
+            color: var(--text-color-dark);
+            border: 2px solid var(--text-color-dark);
+            border-radius: 25px; 
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: var(--primary-accent);
+            color: var(--text-color-light);
+            border-color: var(--primary-accent);
+        }
+
+        #hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+            min-height: 80vh;
+            padding-top: 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 3em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-icons a {
+            font-size: 1.5em;
+            color: var(--primary-accent); 
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--background-dark); 
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 50%; 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+       
+        .about-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text-block {
+            background-color: var(--card-dark);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .about-text-block p {
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-box {
+            background-color: var(--card-dark);
+            border: 2px solid var(--primary-accent);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: 600;
+            color: var(--primary-accent);
+        }
+
+     
+        .specialization-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .specialty-card {
+            padding: 30px;
+            border-radius: 15px;
+            width: 45%;
+        }
+
+        .specialty-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .specialty-card ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .specialty-card li {
+            background-color: var(--background-dark);
+            padding: 10px 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 400;
+        }
+
+     
+        .light-bg {
+            background-color: var(--background-light);
+            color: var(--text-color-dark);
+            border: 1px solid var(--text-color-dark);
+        }
+        .light-bg li {
+            background-color: #ededed;
+            color: var(--text-color-dark);
+        }
+
+        .dark-bg {
+            background-color: var(--card-dark);
+            border: 1px solid var(--primary-accent);
+            color: var(--text-color-light);
+        }
+        .dark-bg li {
+            background-color: #383838;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .project-card {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--text-color-light);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .project-overlay h4 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .project-overlay p {
+            font-weight: 300;
+        }
+
+        .more-projects-title {
+            font-size: 1.8em;
+            margin-bottom: 40px;
+        }
+
+        .more-projects-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .more-project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--card-dark);
+            padding: 15px 30px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .more-project-item:hover {
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+        }
+
+        .more-project-item:hover .fas {
+            color: var(--primary-accent);
+            transform: translateX(5px);
+        }
+
+        .more-project-item .fas {
+            color: var(--text-color-light);
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .contact-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-dark); 
+            padding: 40px;
+            border-radius: 15px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid var(--primary-accent); 
+            border-radius: 10px;
+            background-color: var(--background-dark); 
+            color: var(--text-color-light);
+            font-family: var(--font-family);
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--text-color-light); 
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #999;
+        }
+
+        .submit-button {
+            padding: 12px 30px;
+            background-color: var(--primary-accent); 
+            color: var(--text-color-dark); 
+            border: none;
+            border-radius: 25px; 
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+            align-self: flex-start; 
+        }
+
+        .submit-button:hover {
+            background-color: #0e8568; 
+            color: var(--text-color-light);
+        }
+
+        @media (max-width: 900px) {
+            #hero {
+                grid-template-columns: 1fr;
+                padding-top: 30px;
+            }
+            .hero-image {
+                order: -1;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .specialization-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .specialty-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .specialty-card ul {
+                grid-template-columns: 1fr;
+            }
+            .contact-form-container {
+                padding: 20px;
+            }
+            .submit-button {
+                align-self: stretch; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Shivangi Goswami</div>
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-button">About</a></li>
+                <li><a href="#skills" class="nav-button">Skills</a></li>
+                <li><a href="#projects" class="nav-button">Projects</a></li>
+                <li><a href="#contact" class="nav-button">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="container">
+        <div class="hero-content">
+            <h1>Communication Designer</h1>
+            <div class="social-icons">
+                <a href="mailto:shivangi.gdesign@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/shivangi-goswami-195182309" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/shivangigoswami010?igsh=MXhtOHU4ZjVsNzQxdQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="319086436_647584793761332_7158380475841682053_n.jpg" alt="Shivangi Goswami" style="object-fit: cover;">
+        </div>
+    </section>
+
+    <section id="about" class="container dark-section">
+        <h2 class="section-title accent-text">Let me introduce myself</h2>
+        <div class="about-grid">
+            <div class="about-text-block">
+                <p>I am a dynamic and creative second-year Communication Design student at Atlas SkillTech University, driven by a passion for graphic design and visual storytelling. Specializing in Communication Design, I love exploring diverse styles and techniques to expand my creative boundaries. With a keen eye for detail and a commitment to staying updated on design trends, I aim to create work that is not only visually appealing but also functional and impactful. Whether collaborating in a team or working independently, I embrace every opportunity to learn, experiment, and grow as a designer. Dedicated to crafting meaningful designs that leave a lasting impression, I am constantly seeking new challenges to sharpen my skills and bring innovative ideas to life.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-box">Teamwork</div>
+                <div class="skill-box">Problem Solving</div>
+                <div class="skill-box">Critical Thinking</div>
+                <div class="skill-box">Visual Storytelling</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2 class="section-title">Specialization</h2>
+        <div class="specialization-grid">
+            <div class="specialty-card light-bg">
+                <h3>Design Softwares</h3>
+                <ul>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe InDesign</li>
+                    <li>Figma</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Inkscape</li>
+                    <li>Canva</li>
+                </ul>
+            </div>
+            <div class="specialty-card dark-bg">
+                <h3>Design Specialties</h3>
+                <ul>
+                    <li>Brand Identity</li>
+                    <li>UI/UX Design</li>
+                    <li>Print Design</li>
+                    <li>Typography</li>
+                    <li>Illustration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container dark-section">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-overlay">
+                    <h4>BioBoosters</h4>
+                    <p>Branding and Marketing strategy</p>
+                </div>
+                <img src="Portfolio.png" alt="BioBoosters">
+            </div>
+            <div class="project-card">
+                <div class="project-overlay">
+                    <h4>Set In Type</h4>
+                    <p>Card Game Creation</p>
+                </div>
+                <img src="set in type.png" alt="Set In Type">
+            </div>
+            <div class="project-card">
+                <div class="project-overlay">
+                    <h4>Rimjhim</h4>
+                    <p>Digital Magazine for Teenagers</p>
+                </div>
+                <img src="bitmap02.jpg" alt="Rimjhim">
+            </div>
+        </div>
+
+        <h2 class="section-title more-projects-title">More Projects</h2>
+        <div class="more-projects-list">
+            <a href="#" class="more-project-item">
+                <span>Goomti</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#" class="more-project-item">
+                <span>Posters</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#" class="more-project-item">
+                <span>Indulgence</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#" class="more-project-item">
+                <span>Magazine / Zine</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+    
+    <section id="contact" class="container dark-section">
+        <h2 class="section-title accent-text">Contact Me</h2>
+        <div class="contact-form-container">
+            <form class="contact-form" action="thankyou.html" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
